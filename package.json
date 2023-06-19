@@ -1,0 +1,12 @@
+{
+  "name": "living_with_the_goat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "game.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
