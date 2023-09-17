@@ -6,13 +6,16 @@ your_name = input("What is your name ?: ")
 while True:
 
     your_networth = 0
-    your_goat = input("Who is your GOAT? (Ronaldo / Messi): ").lower()
+    your_goat = input("Who is your GOAT? (Ronaldo / Messi): ")
+    ronaldo = "ronaldo"
+    messi = "messi"
 
-# An adventure with C.Ronaldo
-    if your_goat == "ronaldo":
+    # An adventure with C.Ronaldo
+
+    if your_goat.upper() == ronaldo.upper():
 
         # Some constant variables throughout your game with Ronaldo
-        your_place = "Dubai"
+        your_place = "Saudi Arabia"
         your_goat_current_team = "Al Nassr"
         your_goat_last_team = "Man United FC"
         your_goat_best_team = "Real Madrid"
@@ -24,10 +27,10 @@ while True:
         if answer == "continue":
             answer = input(
                 """Ronaldo just fell off the stair-cases trying to fetch you. 
-What do you do? (call ambulance or laugh at him): """).lower()
+                    What do you do? (call ambulance or laugh at him): """).lower()
             if answer == "call ambulance":
                 answer = input(
-                    """The Doctors said he will be fine in a weeks time. 
+                    """The Doctors said he will be fine in a weeks time.  
 What do you do? (wait for him / leave him): """).lower()
                 if answer == "wait for him":
                     answer = input(
@@ -117,6 +120,7 @@ till he fully recovers? (yes/ no): """).lower()
                 else:
                     print("Next time, choose one of the answers in the brackets!")
                     break
+
             elif answer == "laugh at him":
                 print(
                     "Ronaldo felt offended and asked the security guard to escourt you out of his estate")
@@ -130,10 +134,10 @@ till he fully recovers? (yes/ no): """).lower()
         break
 
     # Some constant throughout your adventure with Messi
-    elif your_goat == "messi":
-        your_place = "Paris"
-        your_goat_current_team = "PSG"
-        your_goat_last_team = "Barcelona FC"
+    elif your_goat.upper() == messi.upper():
+        your_place = "USA (Miami)"
+        your_goat_current_team = "Inter Miami FC"
+        your_goat_last_team = "PSG"
         your_goat_best_team = "Barcelona"
         your_goat_friend_1 = "Neymar Jr"
         your_goat_friend_2 = "Luis Suarez"
@@ -143,20 +147,26 @@ till he fully recovers? (yes/ no): """).lower()
                 "Well Messi is more excited about the adventure you will have together. (continue/ quit): ").lower()
 
         if answer == "continue":
-            print("okay")
+            answer = input(
+                "Well as you know Messi he is a soccer fanatic himself, so he just made you a FIFA challenge. (accept "
+                "/ decline ): ").lower()
+
+            if answer == "accept":
+                "You got lucky and won with a margin of 1 - 0, Messi just gave you $ 300 for accepting the challenge"
+                "/ and $ 750 for winning!"
+                your_networth += 1050
+
         elif answer == "quit":
             break
+
 
 # If invalid input is selected
     else:
         print("Invalid input, try again")
         continue
+    break
 
 # When game is quit, putting your networth in the picture
-if your_networth <= 0:
-    print(
-        f"""{your_name} it looks like you had a good adventure with {your_goat}, you made ${your_networth} though.
-I guess {your_place} wasn't that profitable to you, till next time!""")
 
 if your_networth >= 1:
 
@@ -165,3 +175,18 @@ if your_networth >= 1:
         f"""{your_name} you really made bank on your adventure with {your_goat}, 
 you now have a networth of ${your_networth}.
 That is close to {converted_worth} in Rands...sheesh! You should visit {your_place} again!""")
+
+if your_networth >= 60000:
+    converted_worth = your_networth * 17
+    print(
+        f"""{your_name} you really made bank on your adventure with {your_goat}, 
+    you now have a networth of ${your_networth}.
+    
+    That is more than {converted_worth} in Rands... wow you're in the Millionaire's bracket now!
+    You should definitely visit {your_goat} again!
+""")
+
+else:
+    print(
+        f"""{your_name} it looks like you had a good adventure with {your_goat}, you made ${your_networth} though.
+    I guess {your_place} wasn't that profitable to you, till next time!""")
