@@ -144,23 +144,25 @@ till he fully recovers? (yes/ no): """).lower()
 
         print("Messi is a goat")
         answer = input(
-                "Well Messi is more excited about the adventure you will have together. (continue/ quit): ").lower()
+            "Well Messi is more excited about the adventure you will have together. (continue/ quit): ").lower()
 
         if answer == "continue":
             answer = input(
-                "Well as you know Messi he is a soccer fanatic himself, so he just made you a FIFA challenge. (accept "
-                "/ decline ): ").lower()
+                "Well as you know Messi he is a soccer fanatic himself, so he just made you a FIFA challenge. (accept / decline ): ")
 
-            if answer == "accept":
+            if answer.lower() == "accept":
                 "You got lucky and won with a margin of 1 - 0, Messi just gave you $ 300 for accepting the challenge"
-                "/ and $ 750 for winning!"
+                " and $ 750 for winning!"
                 your_networth += 1050
+            else:
+                print("Put a valid value")
+
 
         elif answer == "quit":
             break
 
 
-# If invalid input is selected
+    # If invalid input is selected
     else:
         print("Invalid input, try again")
         continue
@@ -168,8 +170,7 @@ till he fully recovers? (yes/ no): """).lower()
 
 # When game is quit, putting your networth in the picture
 
-if your_networth >= 1:
-
+if your_networth >= 1 & your_networth <= 59000:
     converted_worth = your_networth * 17
     print(
         f"""{your_name} you really made bank on your adventure with {your_goat}, 
@@ -186,7 +187,3 @@ if your_networth >= 60000:
     You should definitely visit {your_goat} again!
 """)
 
-else:
-    print(
-        f"""{your_name} it looks like you had a good adventure with {your_goat}, you made ${your_networth} though.
-    I guess {your_place} wasn't that profitable to you, till next time!""")
